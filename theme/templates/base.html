@@ -1,0 +1,41 @@
+{% import 'nav.html' as nav %}
+
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Roboto+Mono" rel="stylesheet">
+
+    <link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <h1 class="header__title">Kye Russell</h1>
+            <span class="header__blurb">I'm a software developer in Perth, Western Australia</span>
+            <nav class="nav">
+                <ul>
+                    {{ nav.item('Blog', '', page_name == 'index' or article) }}
+                    {% for nav_page in pages %}
+                        {{ nav.item(nav_page.title, nav_page.url, page == nav_page) }}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; 2019</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

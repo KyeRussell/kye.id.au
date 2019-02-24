@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% import "content.html" as content_wrapper %}
+
+{% block content %}
+
+{{ content_wrapper.content_wrapper(page.title, page.url, none, page.content) }}
+
+
+{% endblock %}

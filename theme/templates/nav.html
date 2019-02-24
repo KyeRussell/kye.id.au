@@ -1,0 +1,3 @@
+{% macro item(name, url, active=false) -%}
+    <li class="nav__option{% if active %} nav__option--active{% endif %}"><a href="{{ SITEURL }}/{{ url }}">{{ name }}</a></li>
+{%- endmacro %}

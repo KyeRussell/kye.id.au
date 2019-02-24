@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% import "content.html" as content_wrapper %}
+
+{% block content %}
+
+{{ content_wrapper.content_wrapper(article.title, article.url, article.date, article.content) }}
+
+<a href="/" class="content__back-to-posts">Back to posts</a>
+
+{% endblock %}

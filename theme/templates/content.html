@@ -1,0 +1,11 @@
+{% macro content_wrapper(title, url, created_at, body) -%}
+    <article class="content">
+        <header>
+            <h2 class="content__title">{{ title }}</h2>
+            {% if created_at %}<a href="{{ url }}" class="content__created-at">Posted on {{ created_at.strftime("%d %B %Y") }}</a>{% endif %}
+            <div class="content__body">
+                {{ body }}
+            </div>
+        </header>
+    </article>
+{%- endmacro %}
